@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Rails.application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -54,4 +55,18 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+=======
+require 'api_constraints'
+
+MarketPlaceApi::Application.routes.draw do
+  namespace :api, 
+    defaults: { format: :json }, 
+    constraints: { subdomain: 'api' },
+    path: '/' do
+      scope module: :v1,
+        constraints: ApiConstraints.new(version: 1, default: true) do
+
+      end
+  end
+>>>>>>> setting-api
 end
