@@ -1,0 +1,15 @@
+/Users/arsalan/.rvm/rubies/ruby-2.2.2/bin/ruby -r ./siteconf20150522-57511-1sdup7b.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20150522-57511-1ri19nl/byebug

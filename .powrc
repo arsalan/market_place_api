@@ -1,0 +1,11 @@
+if
+  [ -f "$rvm_path/scripts/rvm" ]
+then
+  __env="$( "$rvm_path/bin/rvm" . do env --path )"
+  if
+    [ -n "$__env" ] &&
+    [ -s "$__env" ]
+  then
+    source "$__env"
+  fi
+fi
