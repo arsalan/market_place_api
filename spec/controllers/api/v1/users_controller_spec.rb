@@ -2,12 +2,16 @@ require 'rails_helper'
 require 'pp'
 
 describe Api::V1::UsersController, type: :controller do
-	before(:each) { request.headers["Accept"] = "application/vnd.marketplace.v1" }
+	before(:each) { 
+		request.headers["Accept"] = "application/vnd.marketplace.v1,
+			#{Mime::JSON}"
+		request.headers["Content-Type"] = "#{Mime::JSON}"
+	}
 
 	describe "GET #show" do
 		before(:each) do
 			@user = FactoryGirl.create(:user)
-			get :show, id: @user.id, format: :json
+			get :show, id: @user.id
 		end
 
 		it "returns the information about a resporter in a hash" do
@@ -22,7 +26,7 @@ describe Api::V1::UsersController, type: :controller do
 		context "when successfully created" do
 			before(:each) do
 				@valid_user = FactoryGirl.attributes_for :user
-				post :create, { user: @valid_user }, format: :json
+				post :create, { user: @valid_user }
 			end
 
 			it "renders the json representation for the newly created user" do
@@ -59,8 +63,7 @@ describe Api::V1::UsersController, type: :controller do
 			before(:each) do
 				@user = FactoryGirl.create :user
 				patch :update, 
-					{ id: @user.id, user: { email: "another@example.com",  } }, 
-					format: :json
+					{ id: @user.id, user: { email: "another@example.com",  } }
 			end
 
 			it "renders the json for the updated user" do
@@ -75,8 +78,7 @@ describe Api::V1::UsersController, type: :controller do
 			before(:each) do
 				@user = FactoryGirl.create :user
 				patch :update,
-					{ id: @user.id, user: { email: "invalid email" } },
-					format: :json
+					{ id: @user.id, user: { email: "invalid email" } }
 			end
 
 			it "renders the json for error" do
@@ -96,7 +98,7 @@ describe Api::V1::UsersController, type: :controller do
 	describe "DELETE #destroy" do
 		before(:each) do
 			@user = FactoryGirl.create :user
-			delete :destroy, { id: @user.id }, format: :json
+			delete :destroy, { id: @user.id }
 		end
 
 		it { should respond_with 204 }
