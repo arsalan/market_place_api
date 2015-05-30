@@ -11,7 +11,7 @@ describe Api::V1::UsersController, type: :controller do
 		end
 
 		it "returns the information about a resporter in a hash" do
-			user_response = JSON.parse(response.body, symbolize_names: true)
+			user_response = json_response
 			expect(user_response[:email]).to eql @user.email
 		end
 
@@ -26,7 +26,7 @@ describe Api::V1::UsersController, type: :controller do
 			end
 
 			it "renders the json representation for the newly created user" do
-				user_response = JSON.parse(response.body, symbolize_names: true)
+				user_response = json_response
 				expect(user_response[:email]).to eql @valid_user[:email]
 			end
 
@@ -37,7 +37,7 @@ describe Api::V1::UsersController, type: :controller do
 			before(:each) do
 				@invalid_user = { password: "2323", password_confirmation: "2323" }
 				post :create, { user: @invalid_user }, format: :json
-				@user_response = JSON.parse(response.body, symbolize_names: true)
+				@user_response = json_response
 			end
 
 			it "renders an errors key in the response json" do
@@ -64,7 +64,7 @@ describe Api::V1::UsersController, type: :controller do
 			end
 
 			it "renders the json for the updated user" do
-				user_response = JSON.parse(response.body, symbolize_names: true)
+				user_response = json_response
 				expect(user_response[:email]).to eql "another@example.com"
 			end	
 
@@ -80,12 +80,12 @@ describe Api::V1::UsersController, type: :controller do
 			end
 
 			it "renders the json for error" do
-				user_response = JSON.parse(response.body, symbolize_names: true)
+				user_response = json_response
 				expect(user_response).to have_key(:errors)
 			end
 
 			it "the error json contains the reason for failure" do
-				user_response = JSON.parse(response.body, symbolize_names: true)
+				user_response = json_response
 				expect(user_response[:errors][:email]).to include "is invalid"
 			end
 
