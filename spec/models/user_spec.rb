@@ -13,4 +13,21 @@ describe User do
 	it { should allow_value('user@example.com').for(:email)}
 
 	it { should be_valid }
+
+	it { should respond_to(:auth_token) }
+	it { should validate_uniqueness_of(:auth_token) }
+
+	describe '#generate_authentication_token!' do
+		let(:stubbed_token) { stubbed_token = "stubbed_unique_token" }
+		it "generates a unique token" do
+			Devise.stub(:friendly_token).and_return(stubbed_token)
+			@user.generate_authentication_token!
+			expect(@user.auth_token).to eql stubbed_token
+		end
+
+		it "generates a different unique token upon successive calls" do
+			@user.generate_authentication_token!
+			expect(@user.auth_token).not_to eql stubbed_token
+		end
+	end
 end
