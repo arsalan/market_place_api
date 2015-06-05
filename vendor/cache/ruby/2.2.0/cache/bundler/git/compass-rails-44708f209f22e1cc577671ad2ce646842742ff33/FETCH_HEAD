@@ -1,0 +1,23 @@
+498cacca390582e7176b4be0da010a64c4b2baf0		branch '1-1-stable' of git://github.com/Compass/compass-rails
+b7b7d974f141481c750cea4ae11d2068d58c31c0		branch '2-0-stable' of git://github.com/Compass/compass-rails
+46b45753e0124da3da840e00c7ecfa52bc672ea5		branch 'fix-rails-detectionwq' of git://github.com/Compass/compass-rails
+3e88f991150ffa39b0a539dffb3326248d18e6ad		branch 'master' of git://github.com/Compass/compass-rails
+19d04cb1ed2734f97934ab9fb4e3732b8742f987		branch 'test-jruby-regex' of git://github.com/Compass/compass-rails
+75148b2e3aa82aea40e3ce2918444b72d39401dd		branch 'test-sprites' of git://github.com/Compass/compass-rails
+2e9fe63d7af5ca853b318ba77ebe912baed6a058	not-for-merge	tag '2.0.2' of git://github.com/Compass/compass-rails
+c9ed578586812b62ac5bb2677d9a37ed616539ec	not-for-merge	tag '2.0.3' of git://github.com/Compass/compass-rails
+290aa981a14c077ec361b7f13922615082147137	not-for-merge	tag '2.0.4' of git://github.com/Compass/compass-rails
+47e8635c8114974673f9e7e57f2739a528f1427f	not-for-merge	tag 'v1.0.0' of git://github.com/Compass/compass-rails
+2c70941f83eccfd12fa6e872f3ed63b871819791	not-for-merge	tag 'v1.0.0.rc.0' of git://github.com/Compass/compass-rails
+dd571376591c692b32db2ce30b1c9219c579975e	not-for-merge	tag 'v1.0.0.rc.1' of git://github.com/Compass/compass-rails
+5c62d23f0427052646bfac0391d45e51419cfd22	not-for-merge	tag 'v1.0.0.rc.2' of git://github.com/Compass/compass-rails
+5c4827f9d85212bcedbe4861133f489088ff4840	not-for-merge	tag 'v1.0.0.rc.3' of git://github.com/Compass/compass-rails
+3469a419801d721c732eb59182c4ea3c9d68d7c8	not-for-merge	tag 'v1.0.0.rc.4' of git://github.com/Compass/compass-rails
+735085bf2e94289565007bbe406c20246e91ca7e	not-for-merge	tag 'v1.0.1' of git://github.com/Compass/compass-rails
+ec8073577f720871b244b8a96117e85749935e4d	not-for-merge	tag 'v1.0.3' of git://github.com/Compass/compass-rails
+c646d6787e7bb828bb26b3ddf764067c2c050c69	not-for-merge	tag 'v1.1.0' of git://github.com/Compass/compass-rails
+15233a153acd8335322f8b7f35e4daeb1ab90dcf	not-for-merge	tag 'v1.1.1' of git://github.com/Compass/compass-rails
+e41d782af9390a109ac7899e9391659b3e7db173	not-for-merge	tag 'v1.1.2' of git://github.com/Compass/compass-rails
+51bf5b2d8a64dcac05dd664889d3cb62f808028f	not-for-merge	tag 'v1.1.7' of git://github.com/Compass/compass-rails
+36eebc69253f2bb6bb236b13373aff4f7cc11928	not-for-merge	tag 'v2.0.0' of git://github.com/Compass/compass-rails
+f9eae1be13d980f981cbb6384692134e4f08ed4f	not-for-merge	tag 'v2.0.1' of git://github.com/Compass/compass-rails
