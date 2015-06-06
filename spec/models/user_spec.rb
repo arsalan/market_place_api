@@ -17,6 +17,23 @@ describe User do
 	it { should respond_to(:auth_token) }
 	it { should validate_uniqueness_of(:auth_token) }
 
+	it { should have_many(:products) }
+
+	describe "#products association" do
+		before do
+			@user.save
+			3.times { FactoryGirl.create :product, user: @user }
+		end
+
+		it "destroying a user cascades to destroying the associated products" do
+			products = @user.products
+			@user.destroy
+			products.each do |product|
+				expect(Product.find(product)).to raise_error ActiveRecord::RecordNotFound
+			end
+		end
+	end
+
 	describe '#generate_authentication_token!' do
 		let(:stubbed_token) { stubbed_token = "stubbed_unique_token" }
 		it "generates a unique token" do

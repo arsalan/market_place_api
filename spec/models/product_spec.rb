@@ -11,6 +11,8 @@ describe Product, type: :model do
 
 	it { expect(product.published).to be false }
 
+	it { should belong_to(:user) }
+
 	it { should validate_presence_of :title }
 	it { should validate_presence_of :price }
 	it { should validate_presence_of :user_id }

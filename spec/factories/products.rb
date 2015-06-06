@@ -3,6 +3,6 @@ FactoryGirl.define do
     title { FFaker::Product.product_name }
 		price { SecureRandom.random_number 100 }
 		published false
-		user_id "1"
+		user
 	end
 end
